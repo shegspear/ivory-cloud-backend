@@ -11,6 +11,7 @@ mongoose.connect('mongodb://localhost:27017/ivorycloudDB', {useNewUrlParser: tru
 const patientSchema = new mongoose.Schema({
     prefix: String,
     name: String,
+    patientimg: String,
     age: Number,
     height: Number,
     weight: Number,
@@ -47,6 +48,7 @@ const doctorSchema = new mongoose.Schema({
     prefix: String,
     suffix: String,
     name: String,
+    docimg: String,
     adminRole: String,
     created: Date,
     notes: [noteSchema],
@@ -60,6 +62,7 @@ const nurseSchema = new mongoose.Schema({
     prefix: String,
     suffix: String,
     name: String,
+    nurseimg: String,
     adminRole: String,
     created: Date,
     notes: [noteSchema],
