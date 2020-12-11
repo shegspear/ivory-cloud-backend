@@ -1,0 +1,132 @@
+<%- include('./partials/header.ejs'); -%> 
+  <body>
+    <div class="con">
+      <div class="wrapper">
+        <div class="left-side">
+          <div class="ftures">
+            <img class="img" src="/images/Images/Saly-1.png" alt="" />
+                  <p class="para">Gain fast and easy access to patient database</p>
+          </div>
+          <div class="ftures">
+              <p class="para">Track and manage medical records with ease</p>
+              <img class="img" src="/images/Images/Saly-12.png" alt="" />
+          </div>
+          <div class="ftures">
+            <img class="img" src="/images/Images/Saly-16.png" alt="" />
+                  <p class="para">Read and edit patient records fast</p>
+          </div>
+              
+              <div id="container">
+                <div id="circle">
+                  <div id="small-circle"></div>
+                </div>
+              </div>
+        </div>
+        <div class="right-side">
+          <div class="step-links">
+            <a class="back">
+               
+            </a>
+            <div class="steps">
+              <p class="step">STEP 02/03</p>
+              <p class="personal">Personal info.</p>
+            </div>	
+          </div>
+          <div class="scroll up">
+            <h3 class="heading">Complete Your profile!</h3>
+            <p class="subtitle">
+              For the purpose of industry regulation, your details are required.
+            </p>
+            <hr />
+            <%- include('./partials/message.ejs'); -%> 
+            <form
+              action="/staff/page2"
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <div class="imge">
+                <img class="img" id="img" src="/images/Images/avatar2.png" alt="">
+              </div>
+              <div>
+                <label class="label">Please Upload an image of yourself*</label>
+                <input type="file" name="staffimage" id="image" placeholder="Your Institute Staff Id" required/>
+              </div>
+              <div>
+                <label class="label">Staff Id*</label>
+                <input type="text" class="inp" name="id" placeholder="Your Institute Staff Id" required/>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12 mb-15">
+                  <label class="label" for="Gender">Gender*</label>
+                  <select id="Gender" class="inp" name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                </div>
+                <div class="col-md-12 mb-15">
+                  <label class="label" for="position">Position*</label>
+                  <select id="position" class="inp" name="position" required>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Nurse">Nurse</option>
+                    <option value="Receptionist">Receptionist</option>
+                    <option value="LAB Scientist">LAB Scientist</option>
+                    <option value="Pharmacist">Pharmacist</option>
+                  </select>
+                </div>
+                <div id="specialty" class="col-md-12 mb-12">
+                  <label for="specialty" class="label">Specialty*</label>
+                  <select class="inp" name="specialty" >
+                    <option value="" >select specialty</option>
+                    <option class="opt" value="Optician">Optician</option>
+                    <option value="Peditician">Peditician</option>
+                    <option value="Pathologist">Pathologist</option>
+                    <option value="Oncologist">Oncologist</option>
+                    <option value="Cardiologist">Cardiologist</option>
+                    <option value="Dermatologist">Dermatologist</option>
+                    <option value="Neurologist">Neurologist</option>
+                    <option value="Surgeon">Surgeon</option>
+                    <option value="Dentist Oral Surgeon">Dentist Oral Surgeon</option>
+                    <option value="Urologist">Urologist</option>
+                    <option value="Emergency Services">Emergency Services</option>
+                    <option value="Physiatrist">Physiatrist</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label class="label">Phone number*</label>
+                <input type="tel" class="inp" name="tel" placeholder="+234808 543 5678"/>
+              </div>
+              <br />
+              
+              <div class="form-group">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="yes"
+                    id="invalidCheck"
+                    name="agree"
+                    value="<%= typeof agree != 'undefined' ? agree : '' %>"
+                  />
+                  <label class="terms" for="invalidCheck">
+                    I agree to terms and conditions
+                  </label>
+                  <div class="invalid-feedback">
+                    You must agree before submitting.
+                  </div>
+                </div>
+              </div>
+              <button class="submit submit-text" type="submit">
+                Save & Continue
+              </button>
+              <p class="safely">
+                <i class="fa fa-lock" aria-hidden="true"></i>Your info is safely
+                secured
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/src/js/step2.js"></script>
+<%- include('./partials/footer.ejs'); -%>

@@ -3,75 +3,117 @@ const mongoose = require('mongoose');
 /////////////////////////////////// notes SChema ////////////////////////////
 const noteSchema = new mongoose.Schema({
     name: String,
-    created: Date,
+    created: {
+        type: Date,
+        default: Date.now()
+    },
     note: String,
     staff: String,
+    img: String
 });
 
 const Note = mongoose.model("note", noteSchema);
 
 ////////////////////////////// prescription Schema //////////////////////////////////
 const presSchema = new mongoose.Schema({
+    staff: String,
+    patient: String,
     drug: String,
-    howmany: Number,
-    times: Number,
-    interval: String
+    howmany: String,
+    note: String,
+    interval: String,
+    presAt: {
+        type: Date,
+        default: Date.now()
+    }
 });
 
 const Prescription = mongoose.model("prescription", presSchema);
 
 ////////////////////////////////////////// Patient Schema //////////////////////////////////////////////////////////////////
 const patientSchema = new mongoose.Schema({
-    prefix: String,
+    patientId: String,
     name: String,
     patientimg: String,
+    email: String,
+    tel: Number,
+    dob: Date,
+    lga: String,
+    address: String,
+    bloodtype: String,
+    nok: String,
     age: Number,
     height: Number,
     weight: Number,
     bmi: Number,
-    admitted: Boolean,
+    admitted: {
+        type: Boolean,
+        default: false
+    },
     ward: String,
-    illness: String
+    illness: String,
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
+    gender: String,
+    pres: [presSchema],
+    notes: [noteSchema]
 });
 
 const Patient = mongoose.model("patient", patientSchema);
 
 
-//////////////////////////////// Doctor Schema ///////////////////////////////////////////////////////////////////////////////////
-const doctorSchema = new mongoose.Schema({
+//////////////////////////////// user Schema ///////////////////////////////////////////////////////////////////////////////////
+const userSchema = new mongoose.Schema({
     prefix: String,
     suffix: String,
     name: String,
-    docimg: String,
-    adminRole: String,
-    created: Date,
+    email: String,
+    password: String,
+    hospital: {
+        type: String,
+        default: 'Ivory Cloud'
+    },
+    userimg: String,
+    gender: String,
+    position: {
+        type: String,
+        default: 'unknown'
+    },
+    speciality: {
+        type: String,
+        default: 'unknown'
+    },
+    userverified:{
+        type: Boolean,
+        default: false
+    },
+    hospitalverified:{
+        type: Boolean,
+        default: false
+    },
+    tel: {
+        type: String,
+        default: 'unknown'
+    },
+    secretToken: String,
+    created: { 
+        type: Date,
+        default: Date.now 
+    },
     notes: [noteSchema],
     prescription: [presSchema]
 });
 
-const Doctor = mongoose.model("doctor", doctorSchema);
+const User = mongoose.model("user", userSchema);
 
-
-//////////////////////////////// Nurse Schema //////////////////////////////////////////////////////////////////////////////////////
-const nurseSchema = new mongoose.Schema({
-    prefix: String,
-    suffix: String,
-    name: String,
-    nurseimg: String,
-    adminRole: String,
-    created: Date,
-    notes: [noteSchema],
-    prescription: [presSchema]
-});
-
-const Nurse = mongoose.model("nurse", nurseSchema);
 
 /////////////////////////////////// Ward Schema /////////////////////////////////////////////////////////////////////////
 const wardSchema = new mongoose.Schema({
     name: String,
     patients: [patientSchema],
-    doctors: [doctorSchema],
-    nurse: [nurseSchema]
+    users: [userSchema],
 });
 
 const Ward = mongoose.model("ward", wardSchema);
@@ -87,18 +129,11 @@ const hospitalSchema = new mongoose.Schema({
     totalPatients: Number,
     totalAmountOfBeds: Number,
     wards: [wardSchema],
-    doctors: [doctorSchema],
-    nurse: [nurseSchema],
+    users: [userSchema],
     patients: [patientSchema]
 });
   
 const Hospital = mongoose.model("hospital", hospitalSchema);
 
-module.exports = Hospital;
-module.exports = Nurse;
-module.exports = Doctor;
-module.exports = Ward;
-module.exports = Note;
-module.exports = Prescription;
-module.exports = Patient;
+module.exports = { Hospital, User, Ward, Note, Prescription, Patient };
 

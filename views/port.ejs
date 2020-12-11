@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/doctordash/doc.css">
+</head>
+<body>
+
+    <!-- CODES FOR THE HEADER -->
+    <header class="border border-bottom-2">
+        <nav class="nav-bar container">
+
+           <ul class="first-nav-list mt-3">
+               <li class="list-item">
+                   <a href="#" class="link">
+                       About
+                   </a>
+               </li>
+
+               <li class="list-item">
+                <a href="#" class="link">
+                     Pricing
+                </a>
+               </li>
+
+               <li class="list-item">
+                <a href="#" class="link">
+                    Contact
+                </a>
+               </li>
+           </ul>
+
+           <ul class="second-nav-list mt-3">
+               <li class="company-logo">
+                    <img src="./images/assets/logo/Vector.png" alt="logo">
+               </li>
+
+               <li class="company-name">
+                   IvoryCloud
+               </li>
+           </ul>
+
+           <ul class="third-nav-list mt-1">
+               <li class="doctor-profile">
+                   <img class="doctor-profile-picture" src="<%= user.userimg %> " alt="doctor picture">
+               </li>
+
+               <li class="notification">
+                  <i class="fa fa-bell-o active"></i>
+                  <i class="fa fa-circle"></i>
+               </li>
+
+               <!-- <li class="add-note">
+                   <i class="fa fa-plus-square-o"></i>
+               </li> -->
+           </ul>
+
+        </nav>
+    </header>
+
+    <!-- HIDDEN NOTIFICATION BOARD -->
+    <div class="hidden-notification-board">
+        <ul class="hidden-notification-list-collection">
+
+            <h6 class="notification-label">
+                New Patient
+            </h6>
+           <li class="hidden-notification-list-item">
+
+              <img class="patient-notify-profile-picture" src="images/assets/patient-avatar/avatar-pic-1.jpg" alt="patient picture"> 
+
+              <span class="patient-notify-profile-name">
+                <a href="#">
+                   Adeolu Kenny
+                </a>
+              </span>
+
+           </li>  
+
+           <h6 class="notification-label">
+              Test Feedback
+           </h6>
+            <li class="hidden-notification-list-item">
+
+                <img class="patient-notify-profile-picture" src="images/assets/patient-avatar/avatar-pic-1.jpg" alt="patient picture"> 
+
+              <span class="patient-notify-profile-name">
+                <a href="#">
+                   Adeolu Kenny
+                </a>
+              </span>
+
+            </li>  
+
+        </ul>
+    </div>
+
+
+     <!-- CODES FOR THE CONTAINER ONE -->
+    <section class="cont-1 container pt-5">
+        <p class="h3 align-left my-0">welcome</p>
+        <p class="doctor-name h2 align-left my-0 font-weight-bold"><%= user.prefix %>  <%= user.name %> </p>
+    </section>
+
+
+    <!-- CODES FOR THE CONTAINER TWO -->
+    <section class="cont-2 container mt-2">
+
+        <div class="cont-2-child-1 p-3">
+           <ul class="container-fluid mt-2">
+              <li>
+                <i class="fa fa-user"></i>
+              </li>
+               
+              <li class="mt-3">
+                <p class="h4">Total Patients</p>
+                <p id="total-num-patients">200,000</p>
+              </li>
+           </ul>
+        </div>
+
+        <div class="cont-2-child-2 mt-5">
+            <button class="search-type-btn mr-0 active">
+                Patient's Name  <i class="fa fa-chevron-up ml-3"></i>
+            </button>
+
+            <input type="search" id="sarch" class="search-bar ml-0" placeholder="Search">
+
+            <button class="search-filter-btn ml-3 active">
+                <i class="fa fa-filter"></i>
+            </button>
+
+        </div>
+    </section>
+
+    <!-- HIDDEN SEARCH BUTTON FILTER -->
+    <div class="hidden-search-btn-type-filter">
+        <ul class="hidden-search-btn-list-collection">
+
+            <li class="hidden-search-btn-list-item">
+               <input type="checkbox" class="search-by-name search-checkbox ml-4">
+               <span>Patient's Name</span>
+            </li>
+
+            <li class="hidden-search-btn-list-item">
+                <input type="checkbox" class="search-by-id search-checkbox ml-4"> 
+                <span>Patient's ID</span>
+            </li>
+
+        </ul>
+    </div>
+
+    <!-- HIDDEN FILTER SEARCH BOARD -->
+    <div class="hidden-filter-search-board">
+       <p class="h6 reset-filter">
+           CLEAR ALL
+       </p> 
+
+       <div class="field-title">
+            <span class="h4 text-dark font-bold">
+                GENDER
+            </span>
+            <button class="gender-field-btn gender accordion-btn open">
+                <i class="fa fa-chevron-down gender open"></i>
+            </button>
+       </div>
+
+       <ul class="gender-list">
+            <li class="gender-list-item male">
+                <span class="h5 text-dark">
+                    Male
+                </span> 
+                <input type="checkbox" class="male-checkbox gender-filter my-checkbox mt-1 mr-2"  name="male" id="male-gender">
+            </li>
+
+            <li class="gender-list-item female">
+                <span class="h5 text-dark">
+                    Female
+                </span> 
+                <input type="checkbox" class="female-checkbox gender-filter my-checkbox mt-1 mr-2"  name="female" id="female-gender">
+            </li>
+       </ul>
+
+
+       <div class="field-title">
+            <span class="h4 text-dark font-bold">
+                AGE
+            </span>
+            <button class="age-field-btn age accordion-btn open">
+                <i class="fa fa-chevron-down age open"></i>
+            </button>
+       </div>
+
+       <ul class="age-list">
+            <li class="age-list-item">
+                <span class="h5 text-dark">
+                    0-12
+                </span> 
+                <input type="checkbox" class="child-checkbox age-filter my-checkbox mt-1 mr-2"  name="child" id="child-age">
+            </li>
+
+            <li class="age-list-item">
+                <span class="h5 text-dark">
+                    12-19
+                </span> 
+                <input type="checkbox" class="teenager-checkbox age-filter my-checkbox mt-1 mr-2"  name="teenager" id="teenager-age">
+            </li>
+
+            <li class="age-list-item">
+                <span class="h5 text-dark">
+                    20-34
+                </span> 
+                <input type="checkbox" class="young-adult-checkbox age-filter my-checkbox mt-1 mr-2"  name="young-adult" id="young-adult-age">
+            </li>
+
+            <li class="age-list-item">
+                <span class="h5 text-dark">
+                    35-49
+                </span> 
+                <input type="checkbox" class="old-adult-checkbox age-filter my-checkbox mt-1 mr-2"  name="old-adult-age" id="old-adult-age">
+            </li>
+
+            <li class="age-list-item">
+                <span class="h5 text-dark">
+                    50 and above
+                </span> 
+                <input type="checkbox" class="elder-checkbox age-filter my-checkbox mt-1 mr-2"  name="elderly" id="elderly-age">
+            </li>
+       </ul>
+
+        <div class="field-title">
+            <span class="h4 text-dark font-bold">
+                WARD
+            </span>
+            <button class="ward-field-btn ward accordion-btn open">
+                <i class="fa fa-chevron-down ward open"></i>
+            </button>
+        </div>
+
+        <ul class="ward-list">
+            <li class="ward-list-item male">
+                <span class="h5 text-dark">
+                    Male
+                </span> 
+                <input type="checkbox" class="male-ward-checkbox ward-filter my-checkbox mt-1 mr-2"  name="male-ward" id="male-ward">
+            </li>
+
+            <li class="ward-list-item female">
+                <span class="h5 text-dark">
+                    Female
+                </span> 
+                <input type="checkbox" class="female-ward-checkbox ward-filter my-checkbox mt-1 mr-2"  name="female-ward" id="female-ward">
+            </li>
+
+            <li class="ward-list-item children">
+                <span class="h5 text-dark">
+                    Children
+                </span> 
+                <input type="checkbox" class="children-ward-checkbox ward-filter my-checkbox mt-1 mr-2"  name="children-ward" id="children-ward">
+            </li>
+       </ul>
+
+       <div class="field-title">
+            <span class="h4 text-dark font-bold">
+                DATE OF ADMISSION
+            </span>
+            <button class="date-field-btn date accordion-btn open">
+                <i class="fa fa-chevron-down ward open"></i>
+            </button>
+       </div>
+
+        <ul class="date-list">
+            <li class="date-list-item male">
+                <span class="h5 text-dark">
+                    Enter date:
+                </span> 
+                <input type="date" class="date-input mt-1 mr-2"  name="date-input" id="date-input">
+            </li>
+        </ul>
+
+
+
+        <div class="d-flex flex-row my-3 justify-content-center">
+            <button class="btn btn-info px-5 py-2 rounded save-btn">
+                Save
+            </button>
+        </div>
+    </div>
+
+    <!-- CODES FOR THE CONTAINER THREE -->
+    <section class="cont-3 container">
+
+           <p class="h3 text-center mt-5">All patients</p>
+            <span id="patients"><%= patient %> </span>
+           <ul id="pat-list" class="patient-list-holder">
+
+             <!-- DUMMY DATA TO POPULATE UI REMEMBER TO CLEAR OUT LATER -->
+            <% patient.forEach(pat => { %>
+                <li class="patient-list-item">
+                    
+                    
+                        <img class="patient-profile-picture" src="<%= pat.patientimg %> " alt="patient picture">  
+
+                        <span class="patient-profile-name">
+                            <a href="http://localhost:3000/patient/<%= pat._id %> ">
+                                <%= pat.name %> 
+                            </a>
+                        </span>
+
+                        <spna class="patient-hospital-id">
+                            <%= pat.patientId %>
+                        </spna>
+
+                        <span class="patient-sex">
+                            <%= pat.gender %> 
+                        </span>
+
+                        <span class="patient-dob">
+                            <%= pat.dob.toDateString() %> 
+                        </span>
+                    
+                    
+                
+                </li> 
+             <% }) %>
+
+             <li class="patient-list-item">
+
+                <img class="patient-profile-picture" src="images/assets/patient-avatar/avatar-pic-1.jpg" alt="patient picture">  
+
+                <span class="patient-profile-name">
+                  <a href="#">
+                     Adeolu Kenny
+                  </a>
+                </span>
+
+                <spna class="patient-hospital-id">
+                    Hospital ID
+                </spna>
+
+                <span class="patient-sex">
+                    Sex
+                </span>
+
+                <span class="patient-dob">
+                   DOB
+                </span>
+
+            </li> 
+
+           </ul>
+        
+           
+    </section>
+
+    <footer class="pt-5">
+         <div class="footer-logo-cont text-center">
+           <img src="images/assets/logo/vector-2.png" alt="company logo">
+         </div>
+         <p class="h5 text-light text-center mt-3">
+             &copy; ivorycloud. All rights reserved
+         </p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+   <script src="src/js/genDoctorPortal.js"></script>
+   <script src="src/js/search.js"></script>
+</body>
+</html>

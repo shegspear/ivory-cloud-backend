@@ -1,0 +1,89 @@
+<%- include('./partials/header.ejs'); -%> 
+<body>
+
+  <div class="con">
+    <div class="wrapper">
+      <div class="left-side">
+        <div class="ftures">
+          <img class="img" src="/images/Images/Saly-1.png" alt="" />
+          <p class="para">Gain fast and easy access to patient database</p>
+        </div>
+        <div class="ftures">
+          <p class="para">Track and manage medical records with ease</p>
+          <img class="img" src="/images/Images/Saly-12.png" alt="" />
+        </div>
+        <div class="ftures">
+          <img class="img" src="/images/Images/Saly-16.png" alt="" />
+          <p class="para">Read and edit patient records fast</p>
+        </div>
+        <div id="container">
+          <div id="circle">
+            <div id="small-circle">
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="right-side">
+        <div class="step-links">
+          <a href="/" class="back">
+              <span class="icon"><i class="fa fa-angle-left fa-sm" aria-hidden="true"></i></span>Back
+          </a>
+        </div>
+        <h3 class="heading login">login</h3>
+        <!-- <p  class="purpose">For the purpose of industry regulation, your details are required.</p> -->
+        <hr>
+        <%- include('./partials/message.ejs'); -%> 
+        <form action="/staff/login" method="POST" class="form needs-validation" novalidate>
+          <div class="">
+            <label for="validationCustom02" class="label">Email Adress*</label>
+            <input type="text" class="inp" id="validationCustom02" placeholder="Enter email adress"
+              name="email" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-12 mb-12">
+              <label for="password" class="label">Create password*</label>
+              <div class="passinp">
+                <input
+                type="password"
+                class="pass"
+                id="password"
+                placeholder="****************"
+                name="password"
+                />
+                <span class="span-eye" aria-hidden="true" id="eye" onclick="toggle()">
+                  show
+                </span>
+              </div>
+              <div class="invalid-feedback">
+                Please provide a valid password.
+              </div>
+            </div>
+          </div>
+          
+          <button class="submit up submit-text" type="submit">login</button>
+          <p class="safely"><i class="fa fa-lock" aria-hidden="true"></i>Your info is safely secured</p>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  <script>
+    var state = false;
+    function toggle() {
+      if (state) {
+        document.getElementById("password").setAttribute("type", "password");
+        document.getElementById("eye").style.color = '#7a797e';
+        state = false;
+      }
+      else {
+        document.getElementById("password").setAttribute("type", "text");
+        document.getElementById("eye").style.color = '#5587ef';
+        state = true;
+      }
+    }
+  </script>
+<%- include('./partials/footer.ejs'); -%> 

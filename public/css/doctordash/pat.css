@@ -1,0 +1,436 @@
+/* ROOT or GENERAL CODE */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  
+  
+  /* COES FOR THE HEADER */
+  
+  .nav-bar {
+    height: 60px;
+    display: flex;
+  }
+  
+  .first-nav-list {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    /* border: 1px solid red; */
+  }
+  
+  .list-item {
+    margin-right: 40px;
+    color: black;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .list-item a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .list-item a:hover {
+    color: gray;
+  }
+  
+  .second-nav-list {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    /* border: 1px solid red; */
+    margin-left: 20%; 
+  }
+  
+  .company-name {
+    color: #08AED5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 7px;
+  }
+  
+  .third-nav-list {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    /* border: 1px solid red; */
+    margin-left: 25%;  
+  }
+  
+  .doctor-profile {
+    border: 2px solid black;
+    width: 38px;
+    height: 38px;
+    border-radius: 20px;
+    margin-top: 2px;
+  }
+  
+  .doctor-profile img {
+     width: 35px;
+     height: 35px;
+     border-radius: 20px;
+  }
+  
+  .notification {
+    font-size: 28px;
+    margin-left: 40px; 
+    cursor: pointer;
+  }
+  
+  .notification :hover {
+    color: grey;
+  }
+  
+  
+  .add-note {
+    font-size: 28px;
+    margin-left: 40px;
+    cursor: pointer;
+  }
+  
+  .add-note :hover {
+    color: grey;
+  }
+  
+  /* CODES FOR CONTAINER 1 */
+  
+  .patient-profile-picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+  }
+  
+  /* CODES FOR THE NAVIGATION SECTION */
+  
+  .nav-opt {
+    background: #F6F8FB;
+  }
+  
+  .nav-opt ul {
+     list-style-type: none;
+  }
+  
+  
+  .nav-opt li {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .nav-opt li:hover {
+    color: blue;
+  }
+  
+  /* ul li .active {
+    color: blue;
+  } */
+  
+  /* CODES FOR CONTAINER 2 */
+  
+  .cont-2-child-1,
+  .cont-2-child-2,
+  .cont-2-child-3 {
+    width: 255px;
+    height: 100px;
+    background: rgba(0, 163, 255, 0.1);
+    box-shadow: 0px 12px 26px rgba(16, 30, 115, 0.06);
+    border-radius: 8px;
+  }
+  
+  .cont-2-child-1 ul,
+  .cont-2-child-2 ul,
+  .cont-2-child-3 ul {
+    list-style-type: none;
+  }
+  
+  .fa-user,
+  .fa-medkit,
+  .fa-heartbeat {
+    font-size: 30px;
+    color: blue;
+  }
+  
+  /* CODES FOR CONTAINER 3 */
+  
+  .doctor-profile-picture {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+  }
+  
+  /* CODES FOR CONTAINER 4 */
+  
+  .nurse-state-btn:hover,
+  .doctor-state-btn:hover,
+  .lab-state-btn:hover {
+    color: blue;
+  }
+  
+  .new-visit-state-btn-active {
+    box-shadow: 0px 0px 26px rgba(16, 30, 115, 0.15);
+    border-radius: 10px;
+    background: #FFFFFF;
+    color: blue;
+    font-weight: bold;
+  }
+  
+  .new-visit-state-note {
+    box-shadow: 0px 10px 26px rgba(16, 30, 115, 0.15);
+    border-radius: 10px;
+    background: #FFFFFF;
+    border: 2px solid #F4F4F4;
+  }
+  
+  /* CODES FOR CONTAINER 7 */
+  
+  .cont-7-child-1,
+  .cont-7-child-2,
+  .cont-7-child-3,
+  .cont-7-child-4 {
+    width: 255px;
+    height: 90px;
+    background: rgba(0, 163, 255, 0.1);
+    box-shadow: 0px 12px 26px rgba(16, 30, 115, 0.06);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .cont-7-child-1:hover,
+  .cont-7-child-2:hover,
+  .cont-7-child-3:hover,
+  .cont-7-child-4:hover {
+    background: rgba(18, 127, 188, 0.78);
+    transition: ease-in-out 0.3s;
+  }
+  
+  .active-test {
+    background: rgba(18, 127, 188, 0.78);
+  }
+  
+  
+  /* CODES FOR CONTAINER 8 */
+  .test-form {
+    box-shadow: 0px 10px 26px rgba(16, 30, 115, 0.15);
+    border-radius: 10px;
+    background: #FFFFFF;
+    border: 2px solid #F4F4F4;
+    width: 60%;
+    margin: 0 auto;
+  }
+  
+  /* CODES FOR CONTAINER 11 */
+  .cont-11 {
+    box-shadow: 0px 10px 26px rgba(16, 30, 115, 0.15);
+    border-radius: 10px;
+    background: #FFFFFF;
+    border: 2px solid #F4F4F4;
+    width: 60%;
+    margin: 0 auto; 
+  }
+  
+  /* CODES FOR CONTAINER 12 */
+  .fa-times {
+    color: red;
+  }
+  
+  .nurse-pharm-state-btn:hover,
+  .doctor-pharm-state-btn:hover,
+  .pharm-state-btn:hover {
+    color: blue;
+  }
+  
+  .pharm-state-btn-active {
+    box-shadow: 0px 0px 26px rgba(16, 30, 115, 0.15);
+    border-radius: 10px;
+    background: #FFFFFF;
+    color: blue;
+    font-weight: bold;
+  }
+  
+  .pharm-state-note {
+    box-shadow: 0px 10px 26px rgba(16, 30, 115, 0.15);
+    border-radius: 10px;
+    background: #FFFFFF;
+    border: 2px solid #F4F4F4;
+  }
+  
+  /* CODES FOR CONTAINER 13 */
+  
+  .cont-13-child-1,
+  .cont-13-child-2 {
+    width: 255px;
+    height: 90px;
+    background: rgba(0, 163, 255, 0.1);
+    box-shadow: 0px 12px 26px rgba(16, 30, 115, 0.06);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .cont-13-child-1:hover,
+  .cont-13-child-2:hover {
+    background: rgba(18, 127, 188, 0.78);
+    transition: ease-in-out 0.3s;
+  }
+  
+  .active-ward {
+    background: rgba(18, 127, 188, 0.78);
+  }
+  
+  /* CODES FOR CONTAINER 14 */
+  
+  .cont-14-child-1,
+  .cont-14-child-2 {
+    background: #FFFFFF;
+    width: 350px;
+    box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+    border-radius: 20px;
+  }
+  
+  .cont-14-child-1:hover,
+  .cont-14-child-2:hover {
+    transition: ease-in-out 0.5s;
+    background-color: rgb(185, 185, 185);
+    cursor: pointer;
+  } 
+  
+  .cont-14-icon-1,
+  .cont-14-icon-2 {
+    font-size: 50px;
+    color: blue;
+  } 
+  
+  /* CODES FOR THE HIDDEN FLTER BOARD FOR GENERAL WARD  */
+  
+  .hidden-boards {
+    /* display: none; */
+    position: relative;
+  }
+  
+  .gen-care-ward-filter {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 350px;
+    /* display: none; */
+    transition: ease-in-out 0.3s;
+  }
+  
+  .icu-ward-filter {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 350px;
+    /* display: none; */
+    position: absolute;
+    right: 360px;
+    transition: ease-in-out 0.3s;
+  }
+  
+  .reset-filter {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .reset-filter:hover {
+    color: red;
+  }
+  
+  .field-title {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px 0;
+  }
+  
+  .gender-field-btn,
+  .room-field-btn {
+    border: 2px solid black;
+    background-color: #fff;
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 6px;
+    background-image: url(../assets/icons/chevron_down_26px.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .gender-list,
+  .room-list {
+    /* border: 1px solid black; */
+    width: 100%;
+    /* height: 1px; */
+    list-style-type: none;
+    margin-top: 5px;
+    overflow: hidden;
+    transition: ease-in-out 0.5s;
+  }
+  
+  .gender-list-item,
+  .room-list-item {
+    margin: 5px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .my-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  
+  .room-status {
+     font-size: 20px;
+  }
+  
+  /* CODES FOR CONTAINER 15 */
+  
+  .cont-15-child-1,
+  .cont-15-child-2,
+  .cont-15-child-3,
+  .cont-15-child-4 {
+    width: 337px;
+    background: #FFFFFF;
+    box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+    border-radius: 20px;
+  }
+  
+  .cont-15-icon-1,
+  .cont-15-icon-2,
+  .cont-15-icon-3,
+  .cont-15-icon-4 {
+    font-size: 50px;
+    color: blue;
+  }
+  
+  .cont-15-child-1:hover,
+  .cont-15-child-2:hover,
+  .cont-15-child-3:hover,
+  .cont-15-child-4:hover {
+    color: white;
+    transition: ease-in-out 0.5s;
+    background-color: rgb(173, 173, 173);
+  }
+  
+  /*CODES FOR THE FOOTER*/
+  
+  footer {
+    background-image: linear-gradient(#57B8CF, #08AED5);
+    height: 150px;
+  }
